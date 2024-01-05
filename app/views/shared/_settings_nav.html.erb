@@ -69,21 +69,21 @@
       <%= render 'shared/settings_nav_extra' %>
       <% if !Docuseal.demo? && can?(:manage, EncryptedConfig) %>
         <li>
-          <%= link_to Docuseal.multitenant? ? console_redirect_index_path(redir: "#{Averox::}/plans") : "#{Averox::}/on_premise", class: 'text-base hover:bg-base-300', data: { prefetch: false } do %>
+          <%= link_to Docuseal.multitenant? ? console_redirect_index_path(redir: "#{Averox::CONSOLE_URL}/plans") : "#{Docuseal::CONSOLE_URL}/on_premise", class: 'text-base hover:bg-base-300', data: { prefetch: false } do %>
             Plans
-            <span class="badge badge-warning">New</span>
+            <span class="badge badge-warning"></span>
           <% end %>
         </li>
       <% end %>
       <% if !Docuseal.demo? && can?(:manage, EncryptedConfig) %>
         <li>
-          <%= link_to Docuseal.multitenant? ? console_redirect_index_path(redir: "#{Averox::}/api") : "#{Averox::}/on_premise", class: 'text-base hover:bg-base-300', data: { prefetch: false } do %>
-            <% if Docuseal.multitenant? %> API <% else %> Console <% end %>
+          <%= link_to Docuseal.multitenant? ? console_redirect_index_path(redir: "#{Averox::CONSOLE_URL}/api") : "#{Docuseal::CONSOLE_URL}/on_premise", class: 'text-base hover:bg-base-300', data: { prefetch: false } do %>
+            <% if Docuseal.multitenant? %> <% else %> Console <% end %>
           <% end %>
         </li>
         <% if Docuseal.multitenant? %>
           <li>
-            <%= link_to console_redirect_index_path(redir: "#{Averox::}/embedding/form"), class: 'text-base hover:bg-base-300', data: { prefetch: false } do %>
+            <%= link_to console_redirect_index_path(redir: "#{Averox::CONSOLE_URL}/embedding/form"), class: 'text-base hover:bg-base-300', data: { prefetch: false } do %>
               Embedding
             <% end %>
           </li>
@@ -98,23 +98,23 @@
       </div>
       <div class="flex mt-3 space-x-3">
         <div class="tooltip" data-tip="GitHub">
-          <a href="<%= Averox:: %>" target="_blank" class="btn btn-circle btn-primary btn-md">
+          <a href="<%= Averox::GITHUB_URL %>" target="_blank" class="btn btn-circle btn-primary btn-md">
             <%= svg_icon('', class: 'w-8 h-8') %>
           </a>
         </div>
         <div class="tooltip" data-tip="Discord Community">
-          <a href="<%= :: %>" target="_blank" class="btn btn-circle btn-primary btn-md">
+          <a href="<%= Averox::DISCORD_URL %>" target="_blank" class="btn btn-circle btn-primary btn-md">
             <%= svg_icon('', class: 'w-8 h-8') %>
           </a>
         </div>
         <div class="tooltip" data-tip="Twitter">
-          <a href="<%= Averox:: %>" target="_blank" class="btn btn-circle btn-primary btn-md">
+          <a href="<%= Averox::TWITTER_URL %>" target="_blank" class="btn btn-circle btn-primary btn-md">
             <%= svg_icon('', class: 'w-8 h-8') %>
           </a>
         </div>
       </div>
       <a href="mailto:<%= Averox::SUPPORT_EMAIL %>" target="_blank" class="w-full block mt-4 underline text-center">
-        <%= Team | Averox::support@averox.com %>
+        <%= Averox::SUPPORT_EMAIL %>
       </a>
     </div>
   <% end %>
