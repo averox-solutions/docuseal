@@ -35,7 +35,7 @@
           </li>
           <% if !Docuseal.demo? && can?(:manage, EncryptedConfig) %>
             <li>
-              <%= link_to Docuseal.multitenant? ? console_redirect_index_path : Averox::, data: { prefetch: false }, class: 'flex items-center' do %>
+              <%= link_to Docuseal.multitenant? ? console_redirect_index_path : Docuseal::CONSOLE_URL, data: { prefetch: false }, class: 'flex items-center' do %>
                 <%= svg_icon('terminal', class: 'w-5 h-5 stroke-2') %>
                 
               <% end %>
@@ -71,8 +71,8 @@
       <% if Docuseal.multitenant? && !request.path.in?([registration_path, new_registration_path]) %>
         <%= link_to registration_path, class: 'btn btn-neutral btn-sm btn-outline' do %>
           <span class="flex items-center justify-center space-x-1">
-            <span class="hidden sm:block">Create free Account</span>
-            <span class="md:hidden">Sign Up</span>
+            <span class="hidden sm:block"></span>
+            <span class="md:hidden"></span>
           </span>
         <% end %>
       <% end %>
