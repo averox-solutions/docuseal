@@ -36,8 +36,6 @@
           <% if !Docuseal.demo? && can?(:manage, EncryptedConfig) %>
             <li>
               <%= link_to Docuseal.multitenant? ? console_redirect_index_path : Docuseal::CONSOLE_URL, data: { prefetch: false }, class: 'flex items-center' do %>
-                <%= svg_icon('terminal', class: 'w-5 h-5 stroke-2') %>
-                
               <% end %>
             </li>
           <% end %>
