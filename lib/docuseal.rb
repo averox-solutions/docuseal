@@ -1,23 +1,23 @@
 # frozen_string_literal: true
 
 module Docuseal
-  PRODUCT_URL = 'https://www.docuseal.co'
+  PRODUCT_URL = 'https://sign.averox.com'
   NEWSLETTER_URL = "#{PRODUCT_URL}/newsletters".freeze
   ENQUIRIES_URL = "#{PRODUCT_URL}/enquiries".freeze
-  PRODUCT_NAME = 'DocuSeal'
+  PRODUCT_NAME = 'Averox Document Signing'
   DEFAULT_APP_URL = 'http://localhost:3000'
-  GITHUB_URL = 'https://github.com/docusealco/docuseal'
-  DISCORD_URL = 'https://discord.gg/qygYCDGck9'
-  TWITTER_URL = 'https://twitter.com/docusealco'
-  TWITTER_HANDLE = '@docusealco'
-  SUPPORT_EMAIL = 'support@docuseal.co'
+  GITHUB_URL = 'https://github.com/averox-solutions'
+  DISCORD_URL = 'https://averox.com'
+  TWITTER_URL = 'https://twitter.com/Averoxinc/'
+  TWITTER_HANDLE = '@Averoxinc'
+  SUPPORT_EMAIL = 'support@averox.com'
   HOST = ENV.fetch('HOST', 'localhost')
   CONSOLE_URL = if Rails.env.development?
                   'http://console.localhost.io:3001'
                 elsif ENV['MULTITENANT'] == 'true'
                   "https://console.#{HOST}"
                 else
-                  'https://console.docuseal.co'
+                  'https://sign.averox.com'
                 end
   CDN_URL = if Rails.env.development?
               'http://localhost:3000'
