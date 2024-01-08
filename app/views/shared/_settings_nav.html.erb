@@ -68,12 +68,12 @@
       <% end %>
       <%= render 'shared/settings_nav_extra' %>
       <% if !Docuseal.demo? && can?(:manage, EncryptedConfig) %>
-        <li>
+       <!-- <li>
           <%= link_to Docuseal.multitenant? ? console_redirect_index_path(redir: "#{Docuseal::CONSOLE_URL}/plans") : "#{Docuseal::CONSOLE_URL}/on_premise", class: 'text-base hover:bg-base-300', data: { prefetch: false } do %>
-            Plans
+            Plans 
             <span class="badge badge-warning">New</span>
           <% end %>
-        </li>
+        </li> -->
       <% end %>
       <% if !Docuseal.demo? && can?(:manage, EncryptedConfig) %>
         <li>
