@@ -62,26 +62,12 @@
         <% end %>
       <% end %>
       <% if can?(:read, AccountConfig) %>
-        <!-- <li>
-          <%= link_to 'Personalization', settings_personalization_path, class: 'text-base hover:bg-base-300' %>
-        </li> -->
       <% end %>
       <%= render 'shared/settings_nav_extra' %>
       <% if !Docuseal.demo? && can?(:manage, EncryptedConfig) %>
-       <!-- <li>
-          <%= link_to Docuseal.multitenant? ? console_redirect_index_path(redir: "#{Docuseal::CONSOLE_URL}/plans") : "#{Docuseal::CONSOLE_URL}/on_premise", class: 'text-base hover:bg-base-300', data: { prefetch: false } do %>
-            Plans 
-            <span class="badge badge-warning">New</span>
-          <% end %>
-        </li> -->
       <% end %>
       <% if !Docuseal.demo? && can?(:manage, EncryptedConfig) %>
         <% if Docuseal.multitenant? %>
-          <li>
-            <%= link_to console_redirect_index_path(redir: "#{Docuseal::CONSOLE_URL}/embedding/form"), class: 'text-base hover:bg-base-300', data: { prefetch: false } do %>
-              Embedding
-            <% end %>
-          </li>
         <% end %>
       <% end %>
     </ul>
@@ -90,9 +76,19 @@
     <div class="mx-4 border-t border-base-300 hidden md:block">
       <div class="text-sm mt-3">
         Need help? Ask a question:
-        <a href="mailto:<%= Docuseal::SUPPORT_EMAIL %>" target="_blank" class="w-full block mt-4 underline text-center">
+      </div>
+      <div class="flex mt-3 space-x-3">
+        <div class="tooltip" data-tip="GitHub">
+        </div>
+        <div class="tooltip" data-tip="Discord Community">
+        </div>
+        <div class="tooltip" data-tip="Twitter">
+        </div>
+      </div>
+      <a href="mailto:<%= Docuseal::SUPPORT_EMAIL %>" target="_blank" class="w-full block mt-4 underline text-center">
         <%= Docuseal::SUPPORT_EMAIL %>
       </a>
+      <% if Docuseal.version.present? %>
       <% end %>
     </div>
   <% end %>
