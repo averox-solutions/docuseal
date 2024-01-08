@@ -78,10 +78,10 @@
     >
       {{ t('signed_with') }}
       <a
-        href="https://www.docuseal.co/start"
+        href="https://averox.com"
         target="_blank"
         class="underline"
-      >DocuSeal</a> - {{ t('open_source_documents_software') }}
+      >Averox</a> - {{ t('open_source_documents_software') }}
     </div>
   </div>
 </template>

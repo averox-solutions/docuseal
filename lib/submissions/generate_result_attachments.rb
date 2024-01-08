@@ -10,8 +10,8 @@ module Submissions
                   'Helvetica'
                 end
 
-    SIGN_REASON = 'Signed by %<name>s with DocuSeal.co'
-    SIGN_SIGNLE_REASON = 'Digitally signed with DocuSeal.co'
+    SIGN_REASON = 'Signed by %<name>s with Averox.com'
+    SIGN_SIGNLE_REASON = 'Digitally signed with Averox.com'
 
     TEXT_LEFT_MARGIN = 1
     TEXT_TOP_MARGIN = 1

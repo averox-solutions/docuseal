@@ -17,7 +17,7 @@ module Submissions
                        'Helvetica'
                      end
 
-    SIGN_REASON = 'Signed with DocuSeal.co'
+    SIGN_REASON = 'Signed with Averox.com'
     VERIFIED_TEXT = 'Verified'
     UNVERIFIED_TEXT = 'Unverified'
 
