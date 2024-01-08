@@ -1,2 +1,2 @@
-<%= link_to Docuseal.multitenant? ? console_redirect_index_path(redir: "#{Docuseal::CONSOLE_URL") : "#{Docuseal::CONSOLE_URL}", class: '', data: { prefetch: false } do %>
+<%= link_to Docuseal.multitenant? ? console_redirect_index_path(redir: "#{Docuseal::CONSOLE_URL") : "#{::}", class: 'hidden md:inline-flex btn btn-warning btn-sm', data: { prefetch: false } do %>
 <% end %>
