@@ -62,12 +62,20 @@
         <% end %>
       <% end %>
       <% if can?(:read, AccountConfig) %>
+        <li>
+          <%= link_to 'Personalization', settings_personalization_path, class: 'text-base hover:bg-base-300' %>
+        </li>
       <% end %>
       <%= render 'shared/settings_nav_extra' %>
       <% if !Docuseal.demo? && can?(:manage, EncryptedConfig) %>
       <% end %>
       <% if !Docuseal.demo? && can?(:manage, EncryptedConfig) %>
         <% if Docuseal.multitenant? %>
+          <li>
+            <%= link_to console_redirect_index_path(redir: "#{Docuseal::CONSOLE_URL}/embedding/form"), class: 'text-base hover:bg-base-300', data: { prefetch: false } do %>
+              Embedding
+            <% end %>
+          </li>
         <% end %>
       <% end %>
     </ul>
@@ -79,14 +87,19 @@
       </div>
       <div class="flex mt-3 space-x-3">
         <div class="tooltip" data-tip="GitHub">
+          <a href="<%= Docuseal::GITHUB_URL %>" target="_blank" class="btn btn-circle btn-primary btn-md">
+          </a>
         </div>
         <div class="tooltip" data-tip="Discord Community">
+          <a href="<%= Docuseal::DISCORD_URL %>" target="_blank" class="btn btn-circle btn-primary btn-md">
+          </a>
         </div>
         <div class="tooltip" data-tip="Twitter">
+          <a href="<%= Docuseal::TWITTER_URL %>" target="_blank" class="btn btn-circle btn-primary btn-md">
+          </a>
         </div>
       </div>
       <a href="mailto:<%= Docuseal::SUPPORT_EMAIL %>" target="_blank" class="w-full block mt-4 underline text-center">
-        <%= Docuseal::SUPPORT_EMAIL %>
       </a>
       <% if Docuseal.version.present? %>
       <% end %>
