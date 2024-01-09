@@ -1,23 +1,23 @@
 # frozen_string_literal: true
 
 module Docuseal
-  PRODUCT_URL = 'https://sign.averox.com'
+  PRODUCT_URL = 'https://www.docuseal.co'
   NEWSLETTER_URL = "#{PRODUCT_URL}/newsletters".freeze
   ENQUIRIES_URL = "#{PRODUCT_URL}/enquiries".freeze
-  PRODUCT_NAME = 'Averox Document Signing'
+  PRODUCT_NAME = 'DocuSeal'
   DEFAULT_APP_URL = 'http://localhost:3000'
-  GITHUB_URL = 'https://github.com/averox-solutions'
-  DISCORD_URL = 'https://averox.com'
-  TWITTER_URL = 'https://twitter.com/Averoxinc/'
-  TWITTER_HANDLE = '@Averoxinc'
-  SUPPORT_EMAIL = 'support@averox.com'
+  GITHUB_URL = 'https://github.com/docusealco/docuseal'
+  DISCORD_URL = 'https://discord.gg/qygYCDGck9'
+  TWITTER_URL = 'https://twitter.com/docusealco'
+  TWITTER_HANDLE = '@docusealco'
+  SUPPORT_EMAIL = 'support@docuseal.co'
   HOST = ENV.fetch('HOST', 'localhost')
   CONSOLE_URL = if Rails.env.development?
                   'http://console.localhost.io:3001'
                 elsif ENV['MULTITENANT'] == 'true'
                   "https://console.#{HOST}"
                 else
-                  'https://sign.averox.com'
+                  'https://console.docuseal.co'
                 end
   CDN_URL = if Rails.env.development?
               'http://localhost:3000'
@@ -29,6 +29,7 @@ module Docuseal
 
   CERTS = JSON.parse(ENV.fetch('CERTS', '{}'))
   TIMESERVER_URL = ENV.fetch('TIMESERVER_URL', nil)
+  VERSION_FILE_PATH = Rails.root.join('.version')
 
   DEFAULT_URL_OPTIONS = {
     host: HOST,
@@ -36,6 +37,10 @@ module Docuseal
   }.freeze
 
   module_function
+
+  def version
+    @version ||= VERSION_FILE_PATH.read.strip if VERSION_FILE_PATH.exist?
+  end
 
   def multitenant?
     ENV['MULTITENANT'] == 'true'
