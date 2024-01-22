@@ -1,7 +1,7 @@
 <% if Docuseal.demo? %><%= render 'shared/demo_alert' %><% end %>
 <% if @pagy.count > 0 || params[:q].present? || @template_folders.present? %>
   <div class="flex justify-between mb-4 items-center">
-    <h1 class="text-4xl font-bold"><span class="hidden md:inline">Document</span> Templates - Averox</h1>
+    <h1 class="text-4xl font-bold"><span class="hidden md:inline">eSigning</span> Templates</h1>
     <div class="flex space-x-2">
       <% if params[:q].present? || @pagy.pages > 1 || @template_folders.present? %>
         <%= render 'shared/search_input' %>
