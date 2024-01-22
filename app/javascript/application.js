@@ -83,7 +83,7 @@ window.customElements.define('template-builder', class extends HTMLElement {
 
     this.app = createApp(TemplateBuilder, {
       template: reactive(JSON.parse(this.dataset.template)),
-      backgroundColor: '#faf7f5',
+      backgroundColor: '#ffffff',
       withPhone: this.dataset.withPhone === 'true',
       withLogo: this.dataset.withLogo !== 'false',
       withPayment: this.dataset.withPayment === 'true',
